@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero {
+  background: url("../../public/images/blog.webp");
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center,center;
+}
