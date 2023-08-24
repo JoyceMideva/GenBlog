@@ -1,7 +1,9 @@
 function Login (){
     return(
         <div>
-            <h1>Login page</h1>
+            <div className="bg-[#0775C6]">
+
+            </div>
         </div>
     )
 }

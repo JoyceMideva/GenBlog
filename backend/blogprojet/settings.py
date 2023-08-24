@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-ne@5-mucc8040f@#-@s06mgp3+a(!fthav=(ea^9f+!s63jvhj
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CORS_ORIGIN_WHITELIST=[
+    "http://localhost:3000",
+"http://localhost:3001"
+]
 
 # Application definition
 
@@ -38,7 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blogapp',
-    'rest_framework'
+    'rest_framework',
+    'corsheaders',
+    
+
 ]
 
 MIDDLEWARE = [
@@ -49,7 +55,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'blogprojet.urls'
 
