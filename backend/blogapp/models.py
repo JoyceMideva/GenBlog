@@ -13,4 +13,31 @@ class Blog(models.Model):
     date_published=models.DateTimeField(default=timezone.now())
 
     def __str__(self):
-        return self.blog_title     
+        return self.blog_title  
+
+
+
+    
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

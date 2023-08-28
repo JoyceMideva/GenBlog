@@ -6,12 +6,12 @@ function Footer(){
     return(
         <div className="">
             <div className=" container mx-auto">
-                <h2 className="font-bold text-center text-3xl">JOIN OUR COMMUNITY OF OVER <span className=" text-[#0775C6]">200,000</span>  BLOGGERS</h2>
-                <div className="flex justify-center items-center py-2 px-4 ">
+                <h2 className="font-bold text-center my-[2em] text-3xl">JOIN OUR COMMUNITY OF OVER <span className=" text-[#0775C6]">200,000</span>  BLOGGERS</h2>
+                <div className="flex mx-auto  justify-between items-center py-2 px-4 ">
             
-                <form className="w-[100%] ">
-                  <input placeholder="Enter your email" type="email" className="p-4 w-[60%] bg-transparent border-2 outline-none" />
-                  <button type="submit" className="shadow text-white bg-[#0775C6] p-4 w-[20%] ">Subscribe</button>
+                <form className="w-[100%]  ">
+                  <input placeholder="Enter your email" type="email" className="p-4 w-[80%]  border-2 bg-transparent outline-none" />
+                  <button type="submit" className=" text-white  bg-[#0775C6] p-4 w-[20%] ">Subscribe</button>
                 </form>
               </div>
               <div className="flex justify-between items-center gap-10">

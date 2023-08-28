@@ -42,7 +42,7 @@ function Blogapp() {
                 <h1 className=" text-4xl font-semibold text-[c] my-2">
                   {blog.blog_title}
                 </h1>
-                <p>{blog.blog_post.substr(0,150)}...</p>
+                <p dangerouslySetInnerHTML={{__html:`${blog.blog_post.substr(0,150)}...`}}></p>
                 <div className="text-[#0775C6] flex gap-1 px-1  my-2">
                   <h4>{blog.blog_author}</h4>
                   <h4 className="border-x-2 border-[#0775c6] px-1 ">
