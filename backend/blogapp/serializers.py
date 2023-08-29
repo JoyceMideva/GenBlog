@@ -1,6 +1,9 @@
+# converts models to json
 from rest_framework import serializers
 from .models import Blog
 from django.contrib.auth.models import User
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+
 
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
@@ -23,3 +26,13 @@ class UserSerializer(serializers.ModelSerializer):
             instance.set_password(password)
         instance.save()
         return instance
+    
+
+class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+    def validate(self,attribute):
+        data=super(CustomTokenObtainPairSerializer,self).validate(attribute)
+        data.update({'username':self.user.username})
+        data.update({'email':self.user.email})
+        return data
+
+
