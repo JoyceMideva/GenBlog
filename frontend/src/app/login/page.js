@@ -4,15 +4,18 @@ import axios from "axios";
 import Nav from "@/components/Nav";
 import profile from "../../../public/images/gender.png";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useRouter } from "next/navigation";
+import { StateContext } from "@/context/state";
 
 function Login() {
+  const { isLogin, setIsLogin } = useContext(StateContext);
+
   const router = useRouter();
   const loginUrl = "http://127.0.0.1:8000/api/token/";
 
-
   const [user, setUser] = useState([]);
+
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
@@ -20,20 +23,24 @@ function Login() {
     e.preventDefault(e);
     console.log(user);
 
-    axios.post(loginUrl, {
-     username: user.username,
-     password: user.password,
-   })
-    .then((response) => {
-localStorage.setItem("refresh_token", response.data.refresh)
-localStorage.setItem("access_token", response.data.access)
-localStorage.setItem("email", response.data.email)
-localStorage.setItem("username", response.data.username)
-console.log(response)
+    axios
+      .post(loginUrl, {
+        username: user.username,
+        password: user.password,
+      })
+      .then((response) => {
+        localStorage.setItem("refresh_token", response.data.refresh);
+        localStorage.setItem("access_token", response.data.access);
+        localStorage.setItem("email", response.data.email);
+        localStorage.setItem("username", response.data.username);
+        console.log(response);
 
+        if (response.status === 200) {
+          isLogin.is_loggedin = true;
 
-   });
-//    router.push('/new-blog')
+           router.push('/')
+        }
+      });
   }
 
   return (

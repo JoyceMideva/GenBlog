@@ -3,17 +3,31 @@ import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import profile from "../../../public/images/gender.png";
 import Image from "next/image";
-import { useState } from "react";
+import axios from "axios";
+import { useContext, useState } from "react";
+import { StateContext } from "@/context/state";
 function Signup() {
+  const { currentUser, setCurrentUser } = useContext(StateContext);
+
+  const signupUrl = "http://127.0.0.1:8000/api/user/create/";
 
   const [userForm, setUserForm] = useState([])
   const handleChange = (e) => {
-    console.log(e);
+
     setUserForm({ ...userForm, [e.target.name]: e.target.value });
   };
     function handleSignup(e) {
       e.preventDefault(e)
       console.log(userForm)
+
+      axios.post(signupUrl,{
+        username:userForm.username,
+        email:userForm.email,
+        password:userForm.password,
+      })
+  .then((response) => {
+    console.log(response);
+});
     }
     
 
@@ -33,8 +47,8 @@ function Signup() {
             onChange={(e)=>handleChange(e)}
               type="text"
               className="w-[65%] outline-none mx-auto shadow-xl shadow-grey-200 border-2   py-4 px-2 mt-[5em] "
-              placeholder="Fullname"
-              name="fullname"
+              placeholder="Username"
+              name="username"
             />
             <input
             onChange={(e)=>handleChange(e)}
@@ -50,20 +64,8 @@ function Signup() {
               placeholder="Password"
               name="password"
             />
-            <input
-            onChange={(e)=>handleChange(e)}
-              type="password"
-              className="w-[65%] outline-none  mx-auto shadow-xl shadow-grey-200 border-2 py-4 px-2 my-5 "
-              placeholder="Confirm password "
-              name="confirmpassword"
-            />
-            <input
-            onChange={(e)=>handleChange(e)}
-              type="text"
-              className="w-[65%] outline-none mx-auto shadow-xl shadow-grey-200 border-2   py-4 px-2 my-5 "
-              placeholder="Phone number"
-              name="phonenumber"
-            />
+            
+            
             <button onClick={(e)=>handleSignup(e)} className="mx-auto w-[65%] text-white bg-[#0775c6] font-bold capitalize py-4 px-2 my-5 rounded-md">
               Signup
             </button>
