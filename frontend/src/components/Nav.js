@@ -7,9 +7,10 @@ import { useContext, useEffect } from "react";
 
 function Nav() {
   const { isLogin, setIsLogin } = useContext(StateContext);
-  useEffect(() => {
-
-  }, []);
+  if(isLogin.is_loggedin){
+    isLogin.username=localStorage.getItem("username")
+    isLogin.email=localStorage.getItem("email")
+  }
   return (
     <div className="container mx-auto  flex justify-between items-center py-4 capitalize">
       <div>
@@ -32,7 +33,7 @@ function Nav() {
               <Link href={`/profile`}>
                 <li>My profile</li>
               </Link>
-              <Link href={``}>
+              <Link href={`/logout`}>
                 {" "}
                 <li>
                   <button className="border-2 text-white bg-[#0775C6] py-2 px-10  rounded-md">

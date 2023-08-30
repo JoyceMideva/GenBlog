@@ -6,9 +6,10 @@ import Image from "next/image";
 import axios from "axios";
 import { useContext, useState } from "react";
 import { StateContext } from "@/context/state";
+import { useRouter } from "next/navigation";
 function Signup() {
   const { currentUser, setCurrentUser } = useContext(StateContext);
-
+const router=useRouter()
   const signupUrl = "http://127.0.0.1:8000/api/user/create/";
 
   const [userForm, setUserForm] = useState([])
@@ -28,6 +29,7 @@ function Signup() {
   .then((response) => {
     console.log(response);
 });
+router.push('/login')
     }
     
 

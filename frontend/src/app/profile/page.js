@@ -11,14 +11,19 @@ import {
 
 } from "react-icons/pi";
 import {FaEnvelope} from "react-icons/fa"
+import { useContext } from "react";
+import { StateContext } from "@/context/state";
 function Profile() {
+
+  const { isLogin, setIsLogin } = useContext(StateContext);
+
   return (
     <div>
       <Nav />
-      <div className=" container mx-auto border-2">
+      <div className=" container mx-auto border-2 border-[#0775c6] rounded-lg p-4 my-5">
         <div className="flex items-center  gap-2">
           <Image width={100} src={profile} />
-          <p className="text-2xl text-[#0775c6]">{localStorage.getItem("username")}</p>
+          <p className="text-2xl text-[#0775c6]">{isLogin.username}</p>
         </div>
         <div className="flex gap-11">
           <div className="flex-1">
@@ -41,7 +46,7 @@ function Profile() {
             </div>
           </div>
           <div className="flex-1">
-            <h3 className="text-3xl text-[#0775c6]">My Blogs</h3>
+            <h3 className="text-3xl text-[#0775c6] font-bold">My Blogs</h3>
             <div className="flex w-[100%] items-center gap-2">
               <div className=" w-[20%] h-[17vh]">
                 <Image src={blog}  className="w-[20] h-[20]"/>
@@ -50,7 +55,7 @@ function Profile() {
                 <h3 className="text-1xl font-bold">
                   Lorem Ipsum es simplemente...
                 </h3>
-                <p>Lorem Ipsum es simplemente el texto de relleno de las...</p>
+                <p>Lorem Ipsum es simplemente el texto de relleno de las el texto de relleno de las el texto de relleno de las...</p>
               </div>
             </div>
                 <p className="text-xl text-[#0775c6] text-end">All Blogs</p>

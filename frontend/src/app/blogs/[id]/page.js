@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import blog from "../../../../public/images/profile.png";
 import Nav from "@/components/Nav";
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from 'next/navigation'
 function Singleblog({params}){
     const[singleBlog,setSingleBlog]=useState({})
@@ -62,7 +63,7 @@ return(
 </div>
 <div className="flex items-center justify-center gap-5 my-4">
   <button onClick={(e) => handleDelete(e)} className="border-2 text-[white] shadow-xl w-[15%] bg-[red] shadow-grey-200  py-2 px-10  rounded-md">DELETE</button>
-  <button className="border-2 border-[#0775C6] text-[#0775C6] shadow-xl w-[15%] shadow-grey-200  py-2 px-10  rounded-md">EDIT</button>
+ <Link href={`${params.id}/edit`}> <button className="border-2 border-[#0775C6] text-[#0775C6] shadow-xl w-[15%] shadow-grey-200  py-2 px-10  rounded-md">EDIT</button></Link>
 </div>
 <p className=" text-lg text-center font-semibold my-4">Place comments</p>
 <textarea rows={40} cols={20} className="w-[40vw] h-[20vh] border-2 mx-auto border-[#0775C6] rounded-lg">qwertyui</textarea>
