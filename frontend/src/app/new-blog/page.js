@@ -1,11 +1,15 @@
 "use client";
+
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState,useEffect } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { StateContext } from "@/context/state";
 function Newblog() {
+  const { isLogin, setIsLogin } = useContext(StateContext);
+
     const router=useRouter()
   const log = () => {
     if (editorRef.current) {
@@ -15,10 +19,15 @@ function Newblog() {
   const [newBlog, setNewBlog] = useState({
     blog_title: "",
     blog_post: "",
-    blog_author: "",
+    blog_author: isLogin.username,
     blog_image: null,
   });
   const [formErrors, setFormErrors] = useState({});
+
+  useEffect(()=>{
+    setNewBlog((prev)=>({...prev,blog_author:isLogin.username}))
+    console.log(newBlog)
+      },[])
 
   function handleAdd(e) {
     e.preventDefault();
@@ -49,6 +58,7 @@ function Newblog() {
   
   const editorRef = useRef(null);
   const url = "http://127.0.0.1:8000/api/blogs/";
+ 
 
   return (
     <div>
@@ -124,7 +134,7 @@ function Newblog() {
                   "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
               }}
             />
-            {formErrors.blog_uthor && (
+            {/* {formErrors.blog_author && (
               <p className="text-red-500">{formErrors.blog_author}</p>
             )}
             <input
@@ -135,7 +145,7 @@ function Newblog() {
               name="blog_author"
               className="w-[50%] outline-none border-2 border-[#0775c6]  py-4 px-2 my-5 "
               placeholder="Blog author"
-            />
+            /> */}
             <button
               onClick={(e) => handleAdd(e)}
               className="mx-auto w-[50%] text-white bg-[#0775c6] py-4 px-2 my-5 rounded-md"

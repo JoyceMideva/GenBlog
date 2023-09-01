@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .hero {
-  background: url("../../public/images/blog.webp");
+  background: url("../../public/images/default.png");
   height: 80vh;
   background-repeat: no-repeat;
   background-size: cover;
