@@ -12,8 +12,8 @@ function Nav() {
     isLogin.email=localStorage.getItem("email")
   }
   return (
-    <div className=" container">
-    <div className="fixed top-0 right-0 left-0 mx-auto bg-white h-[15vh] shadow-[0_0_5px_lightgray] flex justify-between items-center py-4 capitalize">
+    <div className=" ">
+    <div className="fixed top-0 right-0 left-0  mx-auto bg-white h-[15vh] shadow-[0_0_5px_lightgray] flex justify-between items-center py-4 capitalize">
       <Link href={`/`}>
       <div>
         <Image src={logo} width={100} height={100} />
