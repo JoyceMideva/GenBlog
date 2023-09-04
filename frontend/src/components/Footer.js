@@ -7,18 +7,18 @@ function Footer(){
         <div className="">
             <div className=" container mx-auto">
                 <h2 className="font-bold text-center my-[2em] text-3xl">JOIN OUR COMMUNITY OF OVER <span className=" text-[#0775C6]">200,000</span>  BLOGGERS</h2>
-                <div className="flex mx-auto  justify-between items-center py-2 px-4 ">
+                <div className="flex  justify-between items-center py-2 px-5 ">
             
-                <form className="w-[100%]  ">
-                  <input placeholder="Enter your email" type="email" className="p-4 w-[80%]  border-2 bg-transparent outline-none" />
-                  <button type="submit" className=" text-white  bg-[#0775C6] p-4 w-[20%] ">Subscribe</button>
+                <form className="w-[100%]  flex justify-center items-center">
+                  <input placeholder="Enter your email" type="email" className="p-4 w-[40%]  border-2 bg-transparent outline-none" />
+                  <button type="submit" className=" text-white  bg-[#0775C6] p-4 w-[10%] ">Subscribe</button>
                 </form>
               </div>
               <div className="flex justify-between items-center gap-10">
                 <div className="my-4">
                 <Image  src={logo} width={200} height={200}  />
-                <p className="text-2xl">Follow us on :</p>
-                <div className="flex items-center justify-center gap-5">
+                <p className="text-2xl py-[.5em]">Follow us on :</p>
+                <div className="flex items-center justify-center gap-5 py-[.3em]">
 
                 <PiFacebookLogoFill size={40}/>
                 <PiTwitterLogoFill size={40}/>
@@ -28,24 +28,24 @@ function Footer(){
                 </div>
                 <div className="py-2">
                     <h3 className="text-[#0775C6] text-3xl">Quick Links</h3>
-                    <ul className="text-2xl">
-                        <li>About blog</li>
-                        <li>News Letter</li>
-                        <li>Contact Us</li>
-                        <li>Podcasts</li>
-                        <li>Careers</li>
-                        <li>Write for Us</li>
+                    <ul className="text-2xl py-3">
+                        <li className="py-2">About blog</li>
+                        <li className="py-[.3em]">News Letter</li>
+                        <li className="py-[.3em]" >Contact Us</li>
+                        <li  className="py-[.3em]">Podcasts</li>
+                        <li  className="py-[.3em]">Careers</li>
+                        <li className="py-[.3em]">Write for Us</li>
                     </ul>
                 </div>
                 <div className="py-2">
-                <h3 className="text-[#0775C6] text-3xl">Top Articles</h3>
+                <h3 className="text-[#0775C6] text-3xl py-2">Top Articles</h3>
                     <ul className="text-2xl"> 
-                        <li>How to start a blog</li>
-                        <li>How to create a great blog content</li>
-                        <li>How to find readers for your blog</li>
-                        <li>Strategies to build a community</li>
-                        <li>How to create money blogging</li>
-                        <li>Ways to make blogging life easier</li>
+                        <li className="py-[.3em]">How to start a blog</li>
+                        <li  className="py-[.3em]">How to create a great blog content</li>
+                        <li  className="py-[.3em]">How to find readers for your blog</li>
+                        <li  className="py-[.3em]">Strategies to build a community</li>
+                        <li  className="py-[.3em]">How to create money blogging</li>
+                        <li  className="py-[.3em]">Ways to make blogging life easier</li>
                     </ul>
                 </div>
               </div>
