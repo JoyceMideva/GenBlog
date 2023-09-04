@@ -34,7 +34,7 @@ function Blogapp() {
         <div className="w-[70%]">
           {blogs.map((blog) => {
             return (
-              <div className=" border-2 mb-10 flex p-3 justify-center gap-3 items-center rounded-lg border-[#0775C6]">
+              <div className="  mb-10 flex p-3 justify-center gap-3 items-center rounded-lg shadow-[0_0_5px_lightgray]">
                 <div className="w-[40%] h-[200px] rounded-lg">
                   <img
                     src={`${imageUrl}${blog.blog_image}`}

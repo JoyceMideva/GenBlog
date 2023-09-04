@@ -1,6 +1,8 @@
-import {PiCopyright, PiFacebookLogoFill,PiInstagramLogoFill,PiLinkedinLogoFill,PiTwitterLogoFill } from "react-icons/pi";
+import {PiCopyright, PiInstagramLogoFill,PiLinkedinLogoFill } from "react-icons/pi";
 import logo from "../../public/images/logo.svg";
 import Image from "next/image";
+import { FaFacebook } from "react-icons/fa";
+import { AiFillTwitterCircle } from "react-icons/ai";
 
 function Footer(){
     return(
@@ -9,7 +11,7 @@ function Footer(){
                 <h2 className="font-bold text-center my-[2em] text-3xl">JOIN OUR COMMUNITY OF OVER <span className=" text-[#0775C6]">200,000</span>  BLOGGERS</h2>
                 <div className="flex  justify-between items-center py-2 px-5 ">
             
-                <form className="w-[100%]  flex justify-center items-center">
+                <form className="w-[100%]  flex justify-center  items-center">
                   <input placeholder="Enter your email" type="email" className="p-4 w-[40%]  border-2 bg-transparent outline-none" />
                   <button type="submit" className=" text-white  bg-[#0775C6] p-4 w-[10%] ">Subscribe</button>
                 </form>
@@ -20,10 +22,11 @@ function Footer(){
                 <p className="text-2xl py-[.5em]">Follow us on :</p>
                 <div className="flex items-center justify-center gap-5 py-[.3em]">
 
-                <PiFacebookLogoFill size={40}/>
-                <PiTwitterLogoFill size={40}/>
-                <PiInstagramLogoFill size={40}/>
-                <PiLinkedinLogoFill size={40}/>
+                <FaFacebook className="text-[#0775c6]" size={40} />
+              <AiFillTwitterCircle className="text-[#0775c6]" size={45} />
+              
+                <PiInstagramLogoFill className="text-[#0775c6]" size={40}/>
+                <PiLinkedinLogoFill className="text-[#0775c6]" size={40}/>
                 </div>
                 </div>
                 <div className="py-2">
@@ -50,7 +53,7 @@ function Footer(){
                 </div>
               </div>
                     </div>
-                <div className="w-[100%] bg-slate-200 flex items-center justify-center gap-2 ">
+                <div className="w-[100%] py-[1em] bg-slate-200 flex items-center justify-center gap-2 ">
                     <p>Copyright</p>
                     <PiCopyright/>
                     <p>  2023 genblog.com .All rights reserved</p>

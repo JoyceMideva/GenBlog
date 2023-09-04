@@ -78,7 +78,7 @@ function Edit({ params }) {
   return (
     <div>
       <Nav />
-      <div className=" my-[5em]   ">
+      <div className=" my-[5em] mt-[15vh]  ">
         <div className="bg-[#0775c6] mb-[2em]">
           <div className="w-[50vw] m-7 bg-white rounded-md  text-center   mx-auto flex flex-col  items-center  ">
             <input

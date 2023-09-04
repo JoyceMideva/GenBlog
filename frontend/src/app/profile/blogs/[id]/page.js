@@ -41,7 +41,7 @@ function Singleblog({ params }) {
   return (
     <div>
       <Nav />
-      <div className="container mx-auto">
+      <div className="container mt-[15vh] mx-auto">
         <h2 className="text-[#0775C6] text-5xl text-center font-bold">
           {singleBlog.blog_title}
         </h2>

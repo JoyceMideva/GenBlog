@@ -12,15 +12,17 @@ function Nav() {
     isLogin.email=localStorage.getItem("email")
   }
   return (
-    <div className="container mx-auto  flex justify-between items-center py-4 capitalize">
+    <div className=" container">
+    <div className="fixed top-0 right-0 left-0 mx-auto bg-white h-[15vh] shadow-[0_0_5px_lightgray] flex justify-between items-center py-4 capitalize">
+      <Link href={`/`}>
       <div>
         <Image src={logo} width={100} height={100} />
       </div>
-
+      </Link>
       <div className="flex justify-between items-center">
         <ul className="flex justify-between gap-10 items-center text-2xl">
           <Link href={`/`}>
-            {" "}
+
             <li>Home</li>
           </Link>
 
@@ -34,7 +36,7 @@ function Nav() {
                 <li>My profile</li>
               </Link>
               <Link href={`/logout`}>
-                {" "}
+               
                 <li>
                   <button className="border-2 text-white bg-[#0775C6] py-2 px-10  rounded-md">
                     Logout
@@ -67,6 +69,7 @@ function Nav() {
           )}
         </ul>
       </div>
+    </div>
     </div>
   );
 }

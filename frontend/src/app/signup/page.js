@@ -7,6 +7,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { StateContext } from "@/context/state";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 function Signup() {
   const { currentUser, setCurrentUser } = useContext(StateContext);
 const router=useRouter()
@@ -36,7 +37,7 @@ router.push('/login')
   return (
     <div>
       <Nav />
-      <div className="bg-[#0775C6] h-[120vh] flex justify-center items-center flex-col">
+      <div className="bg-[#0775C6] mt-[15vh] h-[120vh] flex justify-center items-center flex-col">
         <h2 className="text-white text-3xl font-bold text-center mt-[2em] ">
           CREATE YOUR ACCOUNT
         </h2>
@@ -48,21 +49,21 @@ router.push('/login')
             <input
             onChange={(e)=>handleChange(e)}
               type="text"
-              className="w-[65%] outline-none mx-auto shadow-xl shadow-grey-200 border-2   py-4 px-2 mt-[5em] "
+              className="w-[65%] outline-none mx-auto shadow-[0_0_5px_lightgray]   py-4 px-2 mt-[5em] "
               placeholder="Username"
               name="username"
             />
             <input
             onChange={(e)=>handleChange(e)}
               type="email"
-              className="w-[65%] outline-none mx-auto shadow-xl shadow-grey-200 border-2   py-4 px-2 my-5 "
+              className="w-[65%] outline-none mx-auto shadow-[0_0_5px_lightgray]   py-4 px-2 my-5 "
               placeholder="Email Address"
               name="email"
             />
             <input
             onChange={(e)=>handleChange(e)}
               type="password"
-              className="w-[65%] outline-none  mx-auto shadow-xl shadow-grey-200 border-2 py-4 px-2 my-5 "
+              className="w-[65%] outline-none  mx-auto shadow-[0_0_5px_lightgray] py-4 px-2 my-5 "
               placeholder="Password"
               name="password"
             />
@@ -73,7 +74,7 @@ router.push('/login')
             </button>
             <p className="font-bold text-lg  text-center py-5">
               Have an account?
-              <span className="text-[#0775c6] font-normal">login</span>{" "}
+         <Link href={`/login`}>    <span className="text-[#0775c6] font-normal">login</span></Link> 
             </p>
           </div>
         </div>

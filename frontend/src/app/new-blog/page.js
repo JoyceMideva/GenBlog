@@ -65,12 +65,12 @@ function Newblog() {
 
 
       <Nav />
-      <div className="   ">
+      <div className="  mt-[15vh] ">
         <div className="bg-[#0775c6] mb-[2em]">
-          <h2 className="text-4xl font-bold text-[#ffffff] mt-[2em] text-center">
+          <h2 className="text-4xl font-bold text-[#fff] mt-[2em] text-center">
             CREATE A POST
           </h2>
-          <div className="w-[50vw] my-7 bg-white rounded-md  text-center py-5  mx-auto flex flex-col  items-center  ">
+          <div className="w-[50vw]  bg-white rounded-md  text-center py-5  mx-auto flex flex-col  items-center  ">
             {formErrors.blog_title && (
               <p className="text-red-500">{formErrors.blog_title}</p>
             )}
@@ -92,7 +92,7 @@ function Newblog() {
               }
               type="file"
               name="blog_image"
-              className="w-[50%] outline-none border-2 border-[#0775c6]  py-4 px-2 my-5rounded-md"
+              className="w-[50%] outline-none border-2 border-[#0775c6]  py-4 px-2 my-5 rounded-md"
               placeholder
             />
             <Editor

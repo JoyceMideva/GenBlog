@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useState, useContext } from "react";
 import { useRouter } from "next/navigation";
 import { StateContext } from "@/context/state";
+import Link from "next/link";
 
 function Login() {
   const { isLogin, setIsLogin } = useContext(StateContext);
@@ -64,14 +65,14 @@ function Login() {
               onChange={(e) => handleChange(e)}
               type="text"
               name="username"
-              className="w-[65%] outline-none mx-auto shadow-xl shadow-grey-200 border-2   py-4 px-2 mt-[5em] "
+              className="w-[65%] outline-none mx-auto shadow-[0_0_5px_lightgray]  py-4 px-2 mt-[5em] "
               placeholder="Username"
             />
             <input
               onChange={(e) => handleChange(e)}
               type="password"
               name="password"
-              className="w-[65%] outline-none  mx-auto shadow-xl shadow-grey-200 border-2 py-4 px-2 my-5 "
+              className="w-[65%] outline-none  mx-auto shadow-[0_0_5px_lightgray] py-4 px-2 my-5 "
               placeholder="Password"
             />
             <button
@@ -88,8 +89,8 @@ function Login() {
               <p className="text-[#0775c6]">Forgot password?</p>
             </div>
             <p className="font-bold text-lg mx-[8em] my-2">
-              Don’t have an account?
-              <span className="text-[#0775c6] font-normal">Signup</span>{" "}
+              Don’t have an account?  
+                   <Link href={`/signup`}>  <span className="text-[#0775c6] font-normal">Signup</span></Link> 
             </p>
           </div>
         </div>
